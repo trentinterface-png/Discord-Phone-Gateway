@@ -1,0 +1,14 @@
+# Never commit SIP credentials, TextNow browser sessions, or tokens
+.env
+.env.*
+!.env.example
+*.log
+*.pid
+browser-profile/
+user-data-dir/
+cookies*
+secrets/
+credentials/
+.baresip/
+node_modules/
+__pycache__/
