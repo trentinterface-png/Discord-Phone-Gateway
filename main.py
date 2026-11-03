@@ -56,6 +56,11 @@ def scan():
     say("Two-way virtual audio bridge", "NOT TESTED")
     print("=== END HOST CHECK ===", flush=True)
 
+try:
+    from install_dependencies import install_once
+    install_once()
+except Exception as exc:
+    print("[INSTALL] Bootstrap skipped safely: " + type(exc).__name__, flush=True)
 scan()
 try:
     from gateway import self_test
