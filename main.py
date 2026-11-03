@@ -57,6 +57,14 @@ def scan():
     print("=== END HOST CHECK ===", flush=True)
 
 scan()
+try:
+    from gateway import self_test
+    print("=== GATEWAY ROUTING SELF-TEST (SIMULATION ONLY) ===", flush=True)
+    for event in self_test():
+        print("[SIMULATION] " + event, flush=True)
+    print("=== SIMULATION PASSED; NO LIVE CALLING OR AUDIO AVAILABLE ===", flush=True)
+except Exception as exc:
+    print("[SIMULATION FAILED] " + repr(exc), flush=True)
 while True:
     print(f"[{datetime.now(timezone.utc).isoformat()}] Diagnostic placeholder running; phone gateway NOT implemented.", flush=True)
     time.sleep(300)
