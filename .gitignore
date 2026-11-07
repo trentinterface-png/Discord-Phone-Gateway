@@ -12,3 +12,4 @@ credentials/
 .baresip/
 node_modules/
 __pycache__/
+.private-asterisk/
